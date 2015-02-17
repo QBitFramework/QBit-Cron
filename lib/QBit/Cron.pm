@@ -95,7 +95,11 @@ sub generate_crond {
     my $user = $opts{'user'} || $cur_user;
     foreach my $path (sort keys(%$methods)) {
         foreach my $method (sort keys(%{$methods->{$path}})) {
-            print join("\t", $methods->{$path}{$method}{'time'}, $user, "$cron_cmd $path $method") . "\n\n";
+            my $cmd = "$cron_cmd $path $method";
+            $cmd = $opts{'locker'}->($cmd, $cron_cmd, $path, $method)
+              if $opts{'locker'} && exists($methods->{$path}{$method}{'attrs'}{'lock'});
+
+            print join("\t", $methods->{$path}{$method}{'time'}, $user, $cmd) . "\n\n";
         }
     }
 }
