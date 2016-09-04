@@ -125,3 +125,33 @@ sub release_lock {
 }
 
 TRUE;
+
+__END__
+
+=encoding utf8
+
+=head1 Name
+
+QBit::Cron - Class for working with Cron.
+
+=head1 GitHub
+
+https://github.com/QBitFramework/QBit-Cron
+
+=head1 Install
+
+=over
+
+=item *
+
+cpanm QBit::Cron
+
+=item *
+
+apt-get install libqbit-cron-perl (http://perlhub.ru/)
+
+=back
+
+For more information. please, see code.
+
+=cut
