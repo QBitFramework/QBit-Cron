@@ -1,3 +1,9 @@
+libqbit-cron-perl (0.004) raring; urgency=low
+
+  * upload to cpan
+
+ -- Igor Sverdlov <igor-sverdlov@mail.ru>  Mon, 05 Sep 2016 00:00:17 +0300
+
 libqbit-cron-perl (0.003) raring; urgency=low
 
   * Add attribute 'SILENT': don't print that other cron is running now.
